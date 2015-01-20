@@ -1,6 +1,6 @@
 {
   "name": "react-social",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React social buttons, Facebook, Twitter and Pinterest",
   "main": "react-social.js",
   "dependencies": {

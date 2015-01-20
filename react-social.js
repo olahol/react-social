@@ -95,6 +95,7 @@
     getDefaultProps: function () {
       return {
         element: "button"
+        , url: window.location
         , onClick: function () { }
       };
     }
