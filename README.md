@@ -29,21 +29,13 @@ var App = React.createClass({
 });
 ```
 
-## Button (FacebookButton, TwitterButton, PinterestButton) API
-
-### Props
-
-##### url
-
-The url you want to share, default is `window.location`.
-
-##### media (required for Pinterest)
-
-Url of an image, required for PinterestButton.
-
 ## Count (FacebookCount, TwitterCount, PinterestCount) API
 
 ### Props
+
+##### element
+
+Change the element the component renders into default is span.
 
 ##### url
 
@@ -54,6 +46,28 @@ The url you want to get the count of, default is `window.location`.
 ##### getCount()
 
 Return the social count.
+
+## Button (FacebookButton, TwitterButton, PinterestButton) API
+
+### Props
+
+##### element
+
+Change the element the component renders into default is button.
+
+##### url
+
+The url you want to share, default is `window.location`.
+
+##### media (required for Pinterest)
+
+Url of an image, required for PinterestButton.
+
+## Styles
+
+The components pass their props down to their element including `className` and
+`style`.
+
 
 ---
 
