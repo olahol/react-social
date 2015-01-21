@@ -6,7 +6,7 @@
 ## Install
 
 ```bash
-npm install react-tagsinput --save
+npm install react-social --save
 ```
 
 ## Example
