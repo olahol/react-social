@@ -4,7 +4,7 @@
   } else if (typeof define === "function" && define.amd) {
     define(["react"], factory);
   } else {
-    root.ReactTagsInput = factory(root.React);
+    root.ReactSocial = factory(root.React);
   }
 })(this, function (React) {
   "use strict";
