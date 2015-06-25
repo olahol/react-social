@@ -101,6 +101,7 @@
       element: React.PropTypes.string
       , url: React.PropTypes.string
       , media: React.PropTypes.string
+      , message: React.PropTypes.string
       , onClick: React.PropTypes.func
     }
 
@@ -108,6 +109,8 @@
       return {
         element: "button"
         , url: window.location
+        , media: ""
+        , message: ""
         , onClick: function () { }
       };
     }
@@ -174,8 +177,10 @@
     mixins: [Button]
 
     , constructUrl: function () {
+      var msg = this.props.message === "" ?
+        this.props.url : this.props.message + " " + this.props.url;
       return "https://www.facebook.com/sharer/sharer.php?u="
-             + encodeURIComponent(this.props.url);
+             + encodeURIComponent(msg);
     }
   });
 
@@ -183,8 +188,10 @@
     mixins: [Button]
 
     , constructUrl: function () {
+      var msg = this.props.message === "" ?
+        this.props.url : this.props.message + " " + this.props.url;
       return "https://twitter.com/home?status="
-             + encodeURIComponent(this.props.url);
+             + encodeURIComponent(msg);
     }
   });
 
