@@ -4,7 +4,7 @@
   "description": "React social buttons, Facebook, Twitter and Pinterest",
   "main": "react-social.js",
   "dependencies": {
-    "react": "^0.12.2"
+    "react": "^0.13.0"
   },
   "devDependencies": {
     "beefy": "~2.1.1"

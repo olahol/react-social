@@ -41,7 +41,12 @@
   var exports = {};
 
   var Count = {
-    getDefaultProps: function () {
+    propTypes: {
+      element: React.PropTypes.string
+      , url: React.PropTypes.string
+    }
+
+    , getDefaultProps: function () {
       return {
         url: window.location
         , element: "span"
@@ -92,7 +97,14 @@
   };
 
   var Button = {
-    getDefaultProps: function () {
+    propTypes: {
+      element: React.PropTypes.string
+      , url: React.PropTypes.string
+      , media: React.PropTypes.string
+      , onClick: React.PropTypes.func
+    }
+
+    , getDefaultProps: function () {
       return {
         element: "button"
         , url: window.location
