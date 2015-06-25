@@ -59,9 +59,14 @@ Change the element the component renders into default is button.
 
 The url you want to share, default is `window.location`.
 
+##### message
+
+A message that's prepended before the url, works only with FacebookButton
+and TwitterButton.
+
 ##### media (required for Pinterest)
 
-Url of an image, required for PinterestButton.
+Url of an image, is required for PinterestButton and only works with PinterestButton.
 
 ## Styles
 
