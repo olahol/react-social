@@ -190,8 +190,7 @@
     , constructUrl: function () {
       var msg = this.props.message === "" ?
         this.props.url : this.props.message + " " + this.props.url;
-      return "https://twitter.com/home?status="
-             + encodeURIComponent(msg);
+      return "https://twitter.com/intent/tweet?text=" + encodeURIComponent(msg);
     }
   });
 
