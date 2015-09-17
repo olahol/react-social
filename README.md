@@ -1,7 +1,7 @@
 # react-social
 
 > Simple [React](http://facebook.github.io/react/index.html) components for
-> social (Facebook, Twitter and Pinterest) buttons and social counts.
+> social (Facebook, Twitter and Pinterest) buttons and counts.
 
 ## Install
 
@@ -12,12 +12,11 @@ npm install react-social --save
 ## Example
 
 ```javascript
-var FacebookButton = require("./react-social").FacebookButton
-  , FacebookCount = require("./react-social").FacebookCount;
+import { FacebookButton, FacebookCount } from "react-social";
 
-var App = React.createClass({
-  render: function () {
-    var url = "https://github.com";
+class App {
+  render {
+    let url = "https://github.com";
 
     return (
       <FacebookButton url={url}>
@@ -26,7 +25,7 @@ var App = React.createClass({
       </FacebookButton>
     );
   }
-});
+}
 ```
 
 ## Count (FacebookCount, TwitterCount, PinterestCount) API
@@ -35,7 +34,7 @@ var App = React.createClass({
 
 ##### element
 
-Change the element the component renders into default is span.
+Change the element the component renders into, default is `span`.
 
 ##### url
 
@@ -53,25 +52,32 @@ Return the social count.
 
 ##### element
 
-Change the element the component renders into default is button.
+Change the element the component renders into, default is `button`.
 
 ##### url
 
 The url you want to share, default is `window.location`.
 
-##### message
+##### message (only TwitterButton and FacebookButton)
 
 A message that's prepended before the url, works only with FacebookButton
 and TwitterButton.
 
 ##### media (required for Pinterest)
 
-Url of an image, is required for PinterestButton and only works with PinterestButton.
+Url of an image, is required for PinterestButton and only works with
+PinterestButton.
 
 ## Styles
 
-The components pass their props down to their element including `className` and
-`style`.
+There are no styles included, the components pass all their props down
+to their element like `className` and `style` so you can easily style
+them yourself.
+
+
+## Notice
+
+When rendered server side all counts will be 0 since they depend on jsonp.
 
 
 ---

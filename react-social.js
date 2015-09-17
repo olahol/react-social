@@ -9,9 +9,9 @@
 })(this, function (React) {
   "use strict";
 
-  if (typeof document === "undefined" || typeof window === "undefined") {
-    throw new Error("react-social uses jsonp and requires a browser environment");
-  }
+  var isBrowser = function () {
+    return !(typeof document === "undefined" || typeof window === "undefined");
+  };
 
   var spread = function (obj, omit) {
     var clone = React.__spread({}, obj);
@@ -47,8 +47,14 @@
     }
 
     , getDefaultProps: function () {
+      var location = "";
+
+      if (isBrowser()) {
+        location = window.location;
+      }
+
       return {
-        url: window.location
+        url: location
         , element: "span"
       };
     }
@@ -75,6 +81,10 @@
 
     , updateCount: function () {
       var url = this.constructUrl();
+
+      if (!isBrowser()) {
+        return ;
+      }
 
       jsonp(url, function (data) {
         this.setState({
@@ -106,9 +116,15 @@
     }
 
     , getDefaultProps: function () {
+      var location = "";
+
+      if (isBrowser()) {
+        location = window.location;
+      }
+
       return {
         element: "button"
-        , url: window.location
+        , url: location
         , media: ""
         , message: ""
         , onClick: function () { }
@@ -117,7 +133,9 @@
 
     , click: function (e) {
       this.props.onClick(e);
-      window.open(this.constructUrl(), "_blank");
+      if (isBrowser()) {
+        window.open(this.constructUrl(), "_blank");
+      }
     }
 
     , render: function () {
@@ -130,6 +148,7 @@
     }
   };
 
+  /* Counts */
   exports.FacebookCount = React.createClass({
     mixins: [Count]
 
@@ -173,6 +192,7 @@
     }
   });
 
+  /* Buttons */
   exports.FacebookButton = React.createClass({
     mixins: [Button]
 
