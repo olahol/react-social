@@ -28,7 +28,7 @@ class App {
 }
 ```
 
-## Count (FacebookCount, TwitterCount, PinterestCount) API
+## Count (FacebookCount, TwitterCount, PinterestCount, VKontakteCount) API
 
 ### Props
 
@@ -46,7 +46,7 @@ The url you want to get the count of, default is `window.location`.
 
 Return the social count.
 
-## Button (FacebookButton, TwitterButton, PinterestButton) API
+## Button (FacebookButton, TwitterButton, PinterestButton, VKontakteButton) API
 
 ### Props
 
@@ -78,6 +78,11 @@ them yourself.
 ## Notice
 
 When rendered server side all counts will be 0 since they depend on jsonp.
+
+## Contributors
+
+* Ola Holmström (@olahol)
+* Alexandr Sugak (@AlexSugak)
 
 
 ---

@@ -38,6 +38,40 @@
     window[callback] = cb;
   };
 
+
+  /* Caputre VKontake callbacks */
+  var vkCallbacks = {};
+
+  var hookVKCallback = function () {
+    if (!isBrowser()) { return; }
+
+    if (!window.VK) {
+      window.VK = {};
+    }
+
+    if (!window.VK.Share) {
+      window.VK.Share = {};
+    }
+
+    var oldCount = window.VK.Share.count;
+
+    window.VK.Share.count = function (index, count) {
+      if (typeof vkCallbacks[index] === "function") {
+        return vkCallbacks[index](count);
+      }
+
+      if (typeof oldCount === "function") {
+        oldCount(index, count);
+      }
+    };
+  };
+
+  var captureVKCallback = function (index, cb) {
+    vkCallbacks[index] = cb;
+  };
+
+  hookVKCallback();
+
   var exports = {};
 
   var Count = {
@@ -80,11 +114,17 @@
     }
 
     , updateCount: function () {
-      var url = this.constructUrl();
-
       if (!isBrowser()) {
         return ;
       }
+
+      if (typeof this.fetchCount === "function") {
+        return this.fetchCount(function (count) {
+          this.setState({ count: count });
+        }.bind(this));
+      }
+
+      var url = this.constructUrl();
 
       jsonp(url, function (data) {
         this.setState({
@@ -189,6 +229,17 @@
 
     , extractCount: function (data) {
       return data.count || 0;
+    }
+  });
+
+  exports.VKontakteCount = React.createClass({
+    mixins: [Count]
+
+    , fetchCount: function (cb) {
+      var index = Math.floor(Math.random() * 10000)
+      var url = "https://vkontakte.ru/share.php?act=count&index=" + index + "&url=" + encodeURIComponent(this.props.url);
+      captureVKCallback(index, cb);
+      jsonp(url);
     }
   });
 
