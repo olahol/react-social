@@ -1,3 +1,7 @@
+##### 1.0.0 (2015-11-27)
+
+* Twitter counts have been deprecated: https://blog.twitter.com/2015/hard-decisions-for-a-sustainable-platform
+
 ##### 0.1.9 (2015-10-13)
 
 * Update peer depedency to work with React 0.14

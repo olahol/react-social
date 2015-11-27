@@ -1,7 +1,7 @@
 # react-social
 
 > Simple [React](http://facebook.github.io/react/index.html) components for
-> social (Facebook, Twitter and Pinterest) buttons and counts.
+> social (Facebook, VKontakte and Pinterest) buttons and counts.
 
 ## Install
 
@@ -28,7 +28,7 @@ class App {
 }
 ```
 
-## Count (FacebookCount, TwitterCount, PinterestCount, VKontakteCount) API
+## Count (FacebookCount,  PinterestCount, VKontakteCount) API
 
 ### Props
 

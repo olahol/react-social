@@ -206,19 +206,6 @@
     }
   });
 
-  exports.TwitterCount = React.createClass({
-    mixins: [Count]
-
-    , constructUrl: function () {
-      return "https://cdn.api.twitter.com/1/urls/count.json?callback=@&url="
-             + encodeURIComponent(this.props.url);
-    }
-
-    , extractCount: function (data) {
-      return data.count || 0;
-    }
-  });
-
   exports.PinterestCount = React.createClass({
     mixins: [Count]
 
