@@ -264,6 +264,18 @@
     }
   });
 
+  exports.EmailButton = React.createClass({
+    mixins: [Button]
+
+    , constructUrl: function () {
+      return [
+        "mailto:?subject=" + encodeURIComponent(this.props.message)
+             + "&body=" + encodeURIComponent(this.props.url),
+        "_self"
+      ]
+    }
+  });
+
   exports.PinterestButton = React.createClass({
     mixins: [Button]
 
