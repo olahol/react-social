@@ -174,7 +174,18 @@
     , click: function (e) {
       this.props.onClick(e);
       if (isBrowser()) {
-        window.open(this.constructUrl(), "_blank");
+        var result = this.constructUrl();
+
+        if (typeof result === "object") {
+          var url = result[0]
+          var target = result[1]
+        } else {
+          var url = result
+          var target = "_blank"
+        }
+
+        console.log("Opening URL", url, "with target", target)
+        window.open(url, target);
       }
     }
 
