@@ -84,6 +84,7 @@ When rendered server side all counts will be 0 since they depend on jsonp.
 * Ola Holmström (@olahol)
 * Alexandr Sugak (@AlexSugak)
 * Jon Principe (@jprincipe)
+* Jean-Baptiste Quenot (@jbq)
 
 
 ---
