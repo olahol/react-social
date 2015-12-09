@@ -235,10 +235,11 @@
     mixins: [Button]
 
     , constructUrl: function () {
-      var msg = this.props.message === "" ?
-        this.props.url : this.props.message + " " + this.props.url;
-      return "https://www.facebook.com/sharer/sharer.php?u="
-             + encodeURIComponent(msg);
+      return "https://www.facebook.com/dialog/feed?"
+             + "app_id=145634995501895"
+             + "&display=popup&caption=" + encodeURIComponent(this.props.message)
+             + "&link=" + encodeURIComponent(this.props.url)
+             + "&redirect_uri=" + encodeURIComponent("https://www.facebook.com/")
     }
   });
 
