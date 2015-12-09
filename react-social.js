@@ -184,7 +184,6 @@
           var target = "_blank"
         }
 
-        console.log("Opening URL", url, "with target", target)
         window.open(url, target);
       }
     }

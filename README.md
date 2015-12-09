@@ -46,7 +46,7 @@ The url you want to get the count of, default is `window.location`.
 
 Return the social count.
 
-## Button (FacebookButton, TwitterButton, PinterestButton, VKontakteButton) API
+## Button (FacebookButton, TwitterButton, PinterestButton, VKontakteButton, EmailButton) API
 
 ### Props
 
