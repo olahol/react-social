@@ -306,5 +306,13 @@
     }
   });
 
+  exports.RedditButton = React.createClass({
+      mixins: [Button]
+
+    , constructUrl: function () {
+        return "https://www.reddit.com/submit?url=" + encodeURIComponent(this.props.url);
+    }
+  });
+
   return exports;
 });
