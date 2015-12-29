@@ -298,5 +298,13 @@
     }
   });
 
+  exports.GooglePlusButton = React.createClass({
+      mixins: [Button]
+
+    , constructUrl: function () {
+        return "https://plus.google.com/share?url=" + encodeURIComponent(this.props.url);
+    }
+  });
+
   return exports;
 });
