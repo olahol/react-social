@@ -314,5 +314,13 @@
     }
   });
 
+  exports.LinkedInButton = React.createClass({
+    mixins: [Button]
+
+    , constructUrl: function () {
+      return "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(this.props.url);
+    }
+  });
+
   return exports;
 });
