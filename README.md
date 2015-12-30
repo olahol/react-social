@@ -46,7 +46,7 @@ The url you want to get the count of, default is `window.location`.
 
 Return the social count.
 
-## Button (FacebookButton, TwitterButton, PinterestButton, GooglePlusButton, RedditButton, VKontakteButton, EmailButton) API
+## Button (FacebookButton, TwitterButton, LinkedInButton, PinterestButton, GooglePlusButton, RedditButton, VKontakteButton, EmailButton) API
 
 ### Props
 
@@ -86,6 +86,7 @@ When rendered server side all counts will be 0 since they depend on jsonp.
 * Jon Principe (@jprincipe)
 * Jean-Baptiste Quenot (@jbq)
 * Kurt Weiberth (@kweiberth)
+* Bartek Gruszka (@bartekgruszka)
 
 
 ---
