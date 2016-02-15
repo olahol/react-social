@@ -84,7 +84,7 @@
       var location = "";
 
       if (isBrowser()) {
-        location = window.location;
+        location = window.location.href;
       }
 
       return {
@@ -159,7 +159,7 @@
       var location = "";
 
       if (isBrowser()) {
-        location = window.location;
+        location = window.location.href;
       }
 
       return {
