@@ -246,7 +246,7 @@
 
     , constructUrl: function () {
       return "https://www.facebook.com/dialog/feed?"
-             + "app_id=145634995501895"
+             + "app_id=" + encodeURIComponent(this.props.app_id)
              + "&display=popup&caption=" + encodeURIComponent(this.props.message)
              + "&link=" + encodeURIComponent(this.props.url)
              + "&redirect_uri=" + encodeURIComponent("https://www.facebook.com/")
