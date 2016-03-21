@@ -68,6 +68,10 @@ and TwitterButton.
 Url of an image, is required for PinterestButton and only works with
 PinterestButton.
 
+##### appId (only FacebookButton)
+
+Facebook app id.
+
 ## Styles
 
 There are no styles included, the components pass all their props down
@@ -87,6 +91,7 @@ When rendered server side all counts will be 0 since they depend on jsonp.
 * Jean-Baptiste Quenot (@jbq)
 * Kurt Weiberth (@kweiberth)
 * Bartek Gruszka (@bartekgruszka)
+* Josh Owens (@queso)
 
 
 ---

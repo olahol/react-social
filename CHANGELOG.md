@@ -1,3 +1,7 @@
+##### 1.0.6 (2016-03-21)
+
+* Fix FacebookButton app id.
+
 ##### 1.0.0 (2015-11-27)
 
 * Twitter counts have been deprecated: https://blog.twitter.com/2015/hard-decisions-for-a-sustainable-platform
