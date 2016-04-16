@@ -13,8 +13,16 @@
     return !(typeof document === "undefined" || typeof window === "undefined");
   };
 
+  var assign = function(dest, src) {
+    for (var key in src) {
+      dest[key] = src[key];
+    }
+
+    return dest;
+  };
+
   var spread = function (obj, omit) {
-    var clone = React.__spread({}, obj);
+    var clone = assign({}, obj);
 
     omit.forEach(function (key) {
       delete clone[key];
@@ -193,7 +201,7 @@
 
       return React.createElement(
         this.props.element
-        , React.__spread({ "onClick": this.click }, other)
+        , assign({ "onClick": this.click }, other)
       );
     }
   };
