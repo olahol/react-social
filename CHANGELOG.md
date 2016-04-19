@@ -1,3 +1,7 @@
+##### 1.0.7 (2016-04-19)
+
+* Remove React.__spread.
+
 ##### 1.0.6 (2016-03-21)
 
 * Fix FacebookButton app id.
