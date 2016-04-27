@@ -1,0 +1,38 @@
+{
+  "name": "react-social",
+  "main": [
+    "react-social.js"
+  ],
+  "version": "1.1.0",
+  "homepage": "https://github.com/olahol/react-social",
+  "description": "React social buttons and counts for Facebook, Pinterest, Google etc ...",
+  "keywords": [
+    "react",
+    "social",
+    "facebook",
+    "twitter",
+    "pinterest",
+    "google",
+    "reddit",
+    "component",
+    "javascript",
+    "browser",
+    "react-component"
+  ],
+  "authors": [
+    "Ola Holmström <olaholmstrom@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "test.js",
+    "example"
+  ],
+  "dependencies": {
+    "react": ">=0.13.0"
+  }
+}
