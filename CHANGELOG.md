@@ -1,3 +1,8 @@
+##### 1.1.0 (2016-04-28)
+
+* Add LinkedInCount, GooglePlusCount and RedditCount.
+* Add tests.
+
 ##### 1.0.7 (2016-04-19)
 
 * Remove React.__spread.

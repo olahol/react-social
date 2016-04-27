@@ -1,5 +1,10 @@
 # react-social
 
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][dep-image]][dep-url]
+[![Download Count][downloads-image]][downloads-url]
+
 > Simple [React](http://facebook.github.io/react/index.html) components for
 > social (Facebook, Google, VKontakte, Pinterest ...) buttons and counts.
 
@@ -117,3 +122,12 @@ When rendered server side counts will be 0 since they depend on JSONP.
 ---
 
 MIT Licensed
+
+[npm-image]: https://img.shields.io/npm/v/react-social.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/react-social
+[downloads-image]: http://img.shields.io/npm/dm/react-social.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/react-social
+[travis-image]: https://img.shields.io/travis/olahol/react-social/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/olahol/react-social
+[dep-image]: https://david-dm.org/olahol/react-social/peer-status.svg?style=flat-square
+[dep-url]: https://david-dm.org/olahol/react-social

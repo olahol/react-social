@@ -1,7 +1,7 @@
 {
   "name": "react-social",
-  "version": "1.0.7",
-  "description": "React social buttons, Facebook, Twitter and Pinterest",
+  "version": "1.1.0",
+  "description": "React social buttons and counts for Facebook, Pinterest, Google etc ...",
   "main": "react-social.js",
   "peerDependencies": {
     "react": ">=0.13.0"
@@ -29,8 +29,11 @@
     "facebook",
     "twitter",
     "pinterest",
+    "google",
+    "reddit",
     "component",
     "javascript",
+    "browser",
     "react-component"
   ],
   "author": "Ola Holmström",
