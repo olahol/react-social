@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "beefy dev.js --live",
-    "test": "browserify test.js | tape-run-electron"
+    "test": "./node_modules/.bin/browserify test.js | ./node_modules/.bin/tape-run-electron"
   },
   "repository": {
     "type": "git",
