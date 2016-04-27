@@ -9,7 +9,6 @@
   "devDependencies": {
     "beefy": "~2.1.1",
     "browserify": "~8.1.1",
-    "electron-prebuilt": "^0.37.7",
     "jquery": "^2.2.3",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
