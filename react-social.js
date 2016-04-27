@@ -98,6 +98,7 @@
       return {
         url: location
         , element: "span"
+        , onCount: function () { }
       };
     }
 
@@ -119,6 +120,10 @@
           this.updateCount();
         });
       }
+    }
+
+    , componentDidUpdate: function () {
+      this.props.onCount(this.state.count);
     }
 
     , updateCount: function () {
@@ -224,6 +229,18 @@
     }
   });
 
+  exports.GooglePlusCount = React.createClass({
+    mixins: [Count]
+
+    , constructUrl: function () {
+      return "https://count.donreach.com/?callback=@&url=" + encodeURIComponent(this.props.url);
+    }
+
+    , extractCount: function (data) {
+      return data.shares.google;
+    }
+  });
+
   exports.PinterestCount = React.createClass({
     mixins: [Count]
 
@@ -234,6 +251,37 @@
 
     , extractCount: function (data) {
       return data.count || 0;
+    }
+  });
+
+  exports.LinkedInCount = React.createClass({
+    mixins: [Count]
+
+    , constructUrl: function () {
+      return "https://www.linkedin.com/countserv/count/share?url=" + encodeURIComponent(this.props.url) + "&callback=@&format=jsonp";
+    }
+
+    , extractCount: function (data) {
+      return data.count || 0;
+    }
+  });
+
+  exports.RedditCount = React.createClass({
+    mixins: [Count]
+
+    , constructUrl: function () {
+      return "https://www.reddit.com/api/info.json?jsonp=@&url=" + encodeURIComponent(this.props.url);
+    }
+
+    , extractCount: function (data) {
+      var count = 0;
+      var chs = data.data.children;
+
+      for (var i = 0; i < chs.length; i++) {
+        count += chs[i].data.score;
+      }
+
+      return count;
     }
   });
 

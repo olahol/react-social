@@ -1,7 +1,7 @@
 # react-social
 
 > Simple [React](http://facebook.github.io/react/index.html) components for
-> social (Facebook, VKontakte and Pinterest) buttons and counts.
+> social (Facebook, Google, VKontakte, Pinterest ...) buttons and counts.
 
 ## Install
 
@@ -14,7 +14,7 @@ npm install react-social --save
 ```javascript
 import { FacebookButton, FacebookCount } from "react-social";
 
-class App {
+class App extends Component {
   render {
     let url = "https://github.com";
 
@@ -28,7 +28,14 @@ class App {
 }
 ```
 
-## Count (FacebookCount,  PinterestCount, VKontakteCount) API
+## Count  API
+
+- FacebookCount
+- GooglePlusCount
+- PinterestCount
+- LinkedInCount
+- RedditCount
+- VKontakteCount
 
 ### Props
 
@@ -40,13 +47,26 @@ Change the element the component renders into, default is `span`.
 
 The url you want to get the count of, default is `window.location`.
 
+##### onCount
+
+Callback for when the count is updated. Callback takes one argument `count`.
+
 ### Methods
 
 ##### getCount()
 
 Return the social count.
 
-## Button (FacebookButton, TwitterButton, LinkedInButton, PinterestButton, GooglePlusButton, RedditButton, VKontakteButton, EmailButton) API
+## Button API
+
+-  FacebookButton
+-  TwitterButton
+-  GooglePlusButton
+-  PinterestButton
+-  LinkedInButton
+-  RedditButton
+-  VKontakteButton
+-  EmailButton
 
 ### Props
 
@@ -78,10 +98,9 @@ There are no styles included, the components pass all their props down
 to their element like `className` and `style` so you can easily style
 them yourself.
 
-
 ## Notice
 
-When rendered server side all counts will be 0 since they depend on jsonp.
+When rendered server side counts will be 0 since they depend on JSONP.
 
 ## Contributors
 
