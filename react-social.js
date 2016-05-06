@@ -348,7 +348,8 @@
     , constructUrl: function () {
       var url = "https://pinterest.com/pin/create/button/?url="
                 + encodeURIComponent(this.props.url) + "&media="
-                + encodeURIComponent(this.props.media);
+                + encodeURIComponent(this.props.media) + "&description="
+                + encodeURIComponent(this.props.message);
       return url;
     }
   });
