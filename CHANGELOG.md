@@ -1,3 +1,7 @@
+##### 1.1.1 (2016-04-28)
+
+* Pinterest now requires a message.
+
 ##### 1.1.0 (2016-04-28)
 
 * Add LinkedInCount, GooglePlusCount and RedditCount.

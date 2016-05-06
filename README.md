@@ -83,10 +83,9 @@ Change the element the component renders into, default is `button`.
 
 The url you want to share, default is `window.location`.
 
-##### message (only TwitterButton and FacebookButton)
+##### message (TwitterButton, FacebookButton and PinterestButton)
 
-A message that's prepended before the url, works only with FacebookButton
-and TwitterButton.
+A message that's prepended before the url, works only with FacebookButton, TwitterButton and PinterestButton.
 
 ##### media (required for Pinterest)
 
@@ -117,6 +116,7 @@ When rendered server side counts will be 0 since they depend on JSONP.
 * Bartek Gruszka (@bartekgruszka)
 * Josh Owens (@queso)
 * Maxime Mezrahi (@maxs15)
+* Arvin Tehrani (@arvinkx)
 
 
 ---
