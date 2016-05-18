@@ -83,16 +83,27 @@ Change the element the component renders into, default is `button`.
 
 The url you want to share, default is `window.location`.
 
-##### message (TwitterButton, FacebookButton and PinterestButton)
+##### target
 
-A message that's prepended before the url, works only with FacebookButton, TwitterButton and PinterestButton.
+The target you want to open, default is `_blank`.
 
-##### media (required for Pinterest)
+##### message
 
-Url of an image, is required for PinterestButton and only works with
-PinterestButton.
+- TwitterButton
+- FacebookButton
+- PinterestButton (required)
 
-##### appId (only FacebookButton)
+A message that's prepended before the url.
+
+##### media
+
+- PinterestButton (required)
+
+Url of an image.
+
+##### appId
+
+- FacebookButton
 
 Facebook app id.
 

@@ -27,20 +27,24 @@ function testCount(t, comp, wait) {
   setTimeout(function () {
     var $el = render(comp, {onCount: function (count) {
       var countText = parseInt($el.text(), 10);
-      t.ok(count == countText);
+      t.equal(count, countText);
     }});
   });
 
   return 1;
 }
 
-function testButton(t, comp) {
+function testButton(t, comp, _blank) {
+  _blank = _blank || "_blank";
   setTimeout(function () {
-    var $el = render(comp);
-    t.ok($el[0].nodeName == "BUTTON");
+    var $el = render(comp, {_open: false, onClick: function (e, url, target) {
+      t.equal(target, _blank);
+    }});
+    $el.click();
+    t.equal($el[0].nodeName, "BUTTON");
   });
 
-  return 1;
+  return 2;
 }
 
 // Counts
@@ -98,5 +102,5 @@ test("VKontakteButton", function (t) {
 });
 
 test("EmailButton", function (t) {
-  t.plan(testButton(t, ReactSocial.EmailButton));
+  t.plan(testButton(t, ReactSocial.EmailButton, "_self"));
 });

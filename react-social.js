@@ -32,6 +32,8 @@
   };
 
   var jsonp = function (url, cb) {
+    cb = cb || function () { };
+    var called = false;
     var now = +new Date(),
       id = now + "_" + Math.floor(Math.random()*1000);
 
@@ -43,7 +45,21 @@
     script.setAttribute("src", query);
     document.body.appendChild(script);
 
-    window[callback] = cb;
+    setTimeout(function () {
+      if (!called) {
+        called = true;
+        cb(new Error("jsonp timeout"));
+      }
+    }, 1000);
+
+    window[callback] = function () {
+      var args = Array.prototype.slice.call(arguments, 0);
+      args.unshift(null);
+      if (!called) {
+        called = true;
+        cb.apply(this, args);
+      }
+    };
   };
 
 
@@ -83,7 +99,9 @@
   var exports = {};
 
   var Count = {
-    propTypes: {
+    displayName: "Count"
+
+    , propTypes: {
       element: React.PropTypes.string
       , url: React.PropTypes.string
     }
@@ -108,7 +126,7 @@
       };
     }
 
-    , componentWillMount: function () {
+    , componentDidMount: function () {
       this.updateCount();
     }
 
@@ -139,7 +157,12 @@
 
       var url = this.constructUrl();
 
-      jsonp(url, function (data) {
+      jsonp(url, function (err, data) {
+        if (err) {
+          console.warn("react-social: jsonp timeout for url " + url);
+          return this.setState({count: 0});
+        }
+
         this.setState({
           count: this.extractCount(data)
         });
@@ -160,12 +183,16 @@
   };
 
   var Button = {
-    propTypes: {
+    displayName: "Button"
+
+    , propTypes: {
       element: React.PropTypes.string
       , url: React.PropTypes.string
       , media: React.PropTypes.string
       , message: React.PropTypes.string
       , onClick: React.PropTypes.func
+      , target: React.PropTypes.string
+      , _open: React.PropTypes.bool
     }
 
     , getDefaultProps: function () {
@@ -181,22 +208,15 @@
         , media: ""
         , message: ""
         , onClick: function () { }
+        , _open: true
       };
     }
 
     , click: function (e) {
-      this.props.onClick(e);
-      if (isBrowser()) {
-        var result = this.constructUrl();
-
-        if (typeof result === "object") {
-          var url = result[0]
-          var target = result[1]
-        } else {
-          var url = result
-          var target = "_blank"
-        }
-
+      var url = this.constructUrl();
+      var target = this.props.target;
+      this.props.onClick(e, url, target);
+      if (isBrowser() && this.props._open) {
         window.open(url, target);
       }
     }
@@ -211,9 +231,17 @@
     }
   };
 
+  var DefaultBlankTarget = {
+    getDefaultProps: function () {
+      return {target: "_blank"};
+    }
+  };
+
   /* Counts */
   exports.FacebookCount = React.createClass({
-    mixins: [Count]
+    displayName: "FacebookCount"
+
+    , mixins: [Count]
 
     , constructUrl: function () {
       var fql = encodeURIComponent("select like_count, share_count from link_stat where url = '" + this.props.url + "'")
@@ -230,7 +258,9 @@
   });
 
   exports.GooglePlusCount = React.createClass({
-    mixins: [Count]
+    displayName: "GooglePlusCount"
+
+    , mixins: [Count]
 
     , constructUrl: function () {
       return "https://count.donreach.com/?callback=@&url=" + encodeURIComponent(this.props.url);
@@ -242,7 +272,9 @@
   });
 
   exports.PinterestCount = React.createClass({
-    mixins: [Count]
+    displayName: "PinterestCount"
+
+    , mixins: [Count]
 
     , constructUrl: function () {
       return "https://api.pinterest.com/v1/urls/count.json?callback=@&url="
@@ -255,7 +287,9 @@
   });
 
   exports.LinkedInCount = React.createClass({
-    mixins: [Count]
+    displayName: "LinkedInCount"
+
+    , mixins: [Count]
 
     , constructUrl: function () {
       return "https://www.linkedin.com/countserv/count/share?url=" + encodeURIComponent(this.props.url) + "&callback=@&format=jsonp";
@@ -267,7 +301,9 @@
   });
 
   exports.RedditCount = React.createClass({
-    mixins: [Count]
+    displayName: "RedditCount"
+
+    , mixins: [Count]
 
     , constructUrl: function () {
       return "https://www.reddit.com/api/info.json?jsonp=@&url=" + encodeURIComponent(this.props.url);
@@ -286,7 +322,9 @@
   });
 
   exports.VKontakteCount = React.createClass({
-    mixins: [Count]
+    displayName: "VKontakteCount"
+
+    , mixins: [Count]
 
     , fetchCount: function (cb) {
       var index = Math.floor(Math.random() * 10000)
@@ -298,7 +336,9 @@
 
   /* Buttons */
   exports.FacebookButton = React.createClass({
-    mixins: [Button]
+    displayName: "FacebookButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
       appId: React.PropTypes.oneOfType([
@@ -317,7 +357,9 @@
   });
 
   exports.TwitterButton = React.createClass({
-    mixins: [Button]
+    displayName: "TwitterButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
       var msg = this.props.message === "" ?
@@ -327,19 +369,23 @@
   });
 
   exports.EmailButton = React.createClass({
-    mixins: [Button]
+    displayName: "EmailButton"
+
+    , mixins: [Button]
+
+    , getDefaultProps: function () {
+      return {target: "_self"};
+    }
 
     , constructUrl: function () {
-      return [
-        "mailto:?subject=" + encodeURIComponent(this.props.message)
-             + "&body=" + encodeURIComponent(this.props.url),
-        "_self"
-      ]
+      return "mailto:?subject=" + encodeURIComponent(this.props.message) + "&body=" + encodeURIComponent(this.props.url);
     }
   });
 
   exports.PinterestButton = React.createClass({
-    mixins: [Button]
+    displayName: "PinterestButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
       media: React.PropTypes.string.isRequired
@@ -355,7 +401,9 @@
   });
 
   exports.VKontakteButton = React.createClass({
-      mixins: [Button]
+    displayName: "VKontakteButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
         return "http://vk.com/share.php?url=" + encodeURIComponent(this.props.url);
@@ -363,7 +411,9 @@
   });
 
   exports.GooglePlusButton = React.createClass({
-      mixins: [Button]
+    displayName: "GooglePlusButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
         return "https://plus.google.com/share?url=" + encodeURIComponent(this.props.url);
@@ -371,7 +421,9 @@
   });
 
   exports.RedditButton = React.createClass({
-      mixins: [Button]
+    displayName: "RedditButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
         return "https://www.reddit.com/submit?url=" + encodeURIComponent(this.props.url);
@@ -379,7 +431,9 @@
   });
 
   exports.LinkedInButton = React.createClass({
-    mixins: [Button]
+    displayName: "LinkedInButton"
+
+    , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
       return "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(this.props.url);

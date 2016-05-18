@@ -1,3 +1,8 @@
+##### 1.2.0 (2016-05-18)
+
+* Move `updateCount` to `componentDidMount`.
+* Add `target` prop.
+
 ##### 1.1.1 (2016-04-28)
 
 * Pinterest now requires a message.
