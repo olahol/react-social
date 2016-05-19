@@ -41,6 +41,7 @@ class App extends Component {
 - LinkedInCount
 - RedditCount
 - VKontakteCount
+- TumblrCount
 
 ### Props
 
@@ -72,6 +73,8 @@ Return the social count.
 -  RedditButton
 -  VKontakteButton
 -  EmailButton
+-  XingButton
+-  TumblrButton
 
 ### Props
 
@@ -91,6 +94,8 @@ The target you want to open, default is `_blank`.
 
 - TwitterButton
 - FacebookButton
+- XingButton
+- TumblrButton
 - PinterestButton (required)
 
 A message that's prepended before the url.
@@ -128,6 +133,7 @@ When rendered server side counts will be 0 since they depend on JSONP.
 * Josh Owens (@queso)
 * Maxime Mezrahi (@maxs15)
 * Arvin Tehrani (@arvinkx)
+* Dennis Stücken (@dstuecken)
 
 
 ---
