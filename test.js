@@ -72,6 +72,10 @@ test("VKontakteCount", function (t) {
   t.plan(testCount(t, ReactSocial.VKontakteCount));
 });
 
+test("TumblrCount", function (t) {
+  t.plan(testCount(t, ReactSocial.TumblrCount));
+});
+
 // Buttons
 test("FacebookButton", function (t) {
   t.plan(testButton(t, ReactSocial.FacebookButton));
@@ -106,9 +110,9 @@ test("EmailButton", function (t) {
 });
 
 test("XingButton", function (t) {
-  t.plan(testButton(t, ReactSocial.XingButton, "_self"));
+  t.plan(testButton(t, ReactSocial.XingButton));
 });
 
 test("TumblrButton", function (t) {
-  t.plan(testButton(t, ReactSocial.TumblrButton, "_self"));
+  t.plan(testButton(t, ReactSocial.TumblrButton));
 });

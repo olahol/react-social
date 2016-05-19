@@ -1,3 +1,7 @@
+##### 1.3.0 (2016-05-20)
+
+* Add TumblrCount, TumblrButton and XingButton.
+
 ##### 1.2.0 (2016-05-18)
 
 * Move `updateCount` to `componentDidMount`.

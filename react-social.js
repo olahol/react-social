@@ -50,7 +50,7 @@
         called = true;
         cb(new Error("jsonp timeout"));
       }
-    }, 1000);
+    }, 10000);
 
     window[callback] = function () {
       var args = Array.prototype.slice.call(arguments, 0);
@@ -342,7 +342,7 @@
 
     , constructUrl: function () {
       return "http://api.tumblr.com/v2/share/stats?url="
-             + encodeURIComponent(this.props.url);
+             + encodeURIComponent(this.props.url) + "&callback=@";
     }
 
     , extractCount: function (data) {
