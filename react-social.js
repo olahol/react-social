@@ -440,5 +440,15 @@
     }
   });
 
+  exports.XingButton = React.createClass({
+    displayName: "XingButton"
+
+    , mixins: [Button, DefaultBlankTarget]
+
+    , constructUrl: function () {
+      return "https://www.xing.com/app/user?op=share;url=" + encodeURIComponent(this.props.url) + ';title=' + encodeURIComponent(this.props.message);
+    }
+  });
+
   return exports;
 });
