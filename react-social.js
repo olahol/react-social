@@ -334,6 +334,22 @@
     }
   });
 
+
+  exports.TumblrCount = React.createClass({
+    displayName: "TumblrCount"
+
+    , mixins: [Count]
+
+    , constructUrl: function () {
+      return "http://api.tumblr.com/v2/share/stats?url="
+             + encodeURIComponent(this.props.url);
+    }
+
+    , extractCount: function (data) {
+      return data.response.note_count || 0;
+    }
+  });
+
   /* Buttons */
   exports.FacebookButton = React.createClass({
     displayName: "FacebookButton"
@@ -446,7 +462,17 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
-      return "https://www.xing.com/app/user?op=share;url=" + encodeURIComponent(this.props.url) + ';title=' + encodeURIComponent(this.props.message);
+      return "https://www.xing.com/app/user?op=share;url=" + encodeURIComponent(this.props.url) + ";title=" + encodeURIComponent(this.props.message);
+    }
+  });
+
+  exports.TumblrButton = React.createClass({
+    displayName: "TumblrButton"
+
+    , mixins: [Button, DefaultBlankTarget]
+
+    , constructUrl: function () {
+      return "https://www.tumblr.com/widgets/share/tool?posttype=link&title=" + encodeURIComponent(this.props.message) + "&content=" + encodeURIComponent(this.props.url) + "&canonicalUrl=" + encodeURIComponent(this.props.url) + "&shareSource=tumblr_share_button";
     }
   });
 

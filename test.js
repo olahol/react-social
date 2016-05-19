@@ -108,3 +108,7 @@ test("EmailButton", function (t) {
 test("XingButton", function (t) {
   t.plan(testButton(t, ReactSocial.XingButton, "_self"));
 });
+
+test("TumblrButton", function (t) {
+  t.plan(testButton(t, ReactSocial.TumblrButton, "_self"));
+});
