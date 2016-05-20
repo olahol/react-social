@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>React Social</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+          crossorigin="anonymous">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            color:       #222;
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 200;
+            margin:      0 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script src="https://fb.me/react-15.0.0.js"></script>
+<script src="https://fb.me/react-dom-15.0.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+<script src="../react-social.js"></script>
+<style>
+    div#app {
+        margin:35px auto;
+        text-align: center;
+    }
+    div#app a {
+        margin-right:5px;
+    }
+</style>
+<script type="text/babel">
+
+    var FacebookButton = ReactSocial.FacebookButton;
+    var TwitterButton = ReactSocial.TwitterButton;
+    var GooglePlusButton = ReactSocial.GooglePlusButton;
+    var PinterestButton = ReactSocial.PinterestButton;
+    var LinkedInButton = ReactSocial.LinkedInButton;
+    var RedditButton = ReactSocial.RedditButton;
+    var VKontakteButton = ReactSocial.VKontakteButton;
+    var TumblrButton = ReactSocial.TumblrButton;
+    var XingButton = ReactSocial.XingButton;
+    var EmailButton = ReactSocial.EmailButton;
+
+    var App = React.createClass({
+        render: function () {
+            var link = "https://github.com/olahol/react-social/", facebookAppId = "yourFacebookAppId", message = "React Social!";
+
+            return (
+              <div>
+                <FacebookButton title="Share via Facebook" message={message} appId={facebookAppId} url={link} element="a" className="">
+                    <i className="fa fa-facebook-square"/>
+                </FacebookButton>
+                <TwitterButton title="Share via Twitter" message={message} url={link} element="a" className="">
+                    <i className="fa fa-twitter-square"/>
+                </TwitterButton>
+                <GooglePlusButton title="Share via Google+" message={message} url={link} element="a" className="">
+                    <i className="fa fa-google-plus-square"/>
+                </GooglePlusButton>
+                <PinterestButton title="Share via Pinterest" message={message} url={link} element="a" className="">
+                    <i className="fa fa-pinteres-square"/>
+                </PinterestButton>
+                <LinkedInButton title="Share via Linkedin" message={message} url={link} element="a" className="">
+                    <i className="fa fa-linkedin-square"/>
+                </LinkedInButton>
+                <RedditButton title="Share via Reddit" message={message} url={link} element="a" className="">
+                    <i className="fa fa-reddit-square"/>
+                </RedditButton>
+                <VKontakteButton title="Share via VKontakte" message={message} url={link} element="a" className="">
+                    <i className="fa fa-vk"/>
+                </VKontakteButton>
+                <EmailButton title="Share via E-Mail" message={message} url={link} element="a" className="">
+                    <i className="fa fa-at"/>
+                </EmailButton>
+                <XingButton title="Share via Xing" message={message} url={link} element="a" className="">
+                    <i className="fa fa-xing"/>
+                </XingButton>
+                <TumblrButton title="Share via Tumblr" message={message} url={link} element="a" className="">
+                    <i className="fa fa-tumblr"/>
+                </TumblrButton>
+            </div>
+            );
+        }
+    });
+
+    ReactDOM.render(<App />, document.getElementById('app'));
+</script>
+</body>
+</html>
