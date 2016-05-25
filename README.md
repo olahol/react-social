@@ -35,13 +35,20 @@ class App extends Component {
 
 ## Count  API
 
+**WARNING: `GooglePlusCount`, `TwitterCount` and `PocketCount` uses the
+[donreach API](http://donreach.com/social-share-count) which has a limit
+of 1000 request per day, if you have an alternative please do not hesitate
+to make a PR**
+
 - FacebookCount
+- TwitterCount
 - GooglePlusCount
 - PinterestCount
 - LinkedInCount
 - RedditCount
 - VKontakteCount
 - TumblrCount
+- PocketCount
 
 ### Props
 
@@ -75,6 +82,7 @@ Return the social count.
 -  EmailButton
 -  XingButton
 -  TumblrButton
+-  PocketButton
 
 ### Props
 
@@ -96,6 +104,7 @@ The target you want to open, default is `_blank`.
 - FacebookButton
 - XingButton
 - TumblrButton
+- PocketButton
 - PinterestButton (required)
 
 A message that's prepended before the url.
@@ -120,7 +129,8 @@ them yourself.
 
 ## Notice
 
-When rendered server side counts will be 0 since they depend on JSONP.
+* When rendered server side counts will be 0 since they depend on JSONP.
+* `GooglePlusCount`, `TwitterCount` and `PocketCount` uses the donreach API which has a limit of 1000 requests per day.
 
 ## Contributors
 

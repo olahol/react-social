@@ -1,3 +1,7 @@
+##### 1.4.0 (2016-05-25)
+
+* Add PocketButton, PocketCount and TwitterCount.
+
 ##### 1.3.0 (2016-05-20)
 
 * Add TumblrCount, TumblrButton and XingButton.

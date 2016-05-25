@@ -21,8 +21,10 @@ function render(comp, props) {
   return $(node).find(".test");
 }
 
-function testCount(t, comp, wait) {
+function testCount(t, str, wait) {
   wait = wait || 2000;
+  var comp = ReactSocial[str];
+  t.equal(comp.displayName, str, "display name and comp name should be equal");
 
   setTimeout(function () {
     var $el = render(comp, {onCount: function (count) {
@@ -31,11 +33,14 @@ function testCount(t, comp, wait) {
     }});
   });
 
-  return 1;
+  return 2;
 }
 
-function testButton(t, comp, _blank) {
+function testButton(t, str, _blank) {
+  var comp = ReactSocial[str];
   _blank = _blank || "_blank";
+  t.equal(comp.displayName, str, "display name and comp name should be equal");
+
   setTimeout(function () {
     var $el = render(comp, {_open: false, onClick: function (e, url, target) {
       t.equal(target, _blank);
@@ -44,75 +49,87 @@ function testButton(t, comp, _blank) {
     t.equal($el[0].nodeName, "BUTTON");
   });
 
-  return 2;
+  return 3;
 }
 
 // Counts
 test("FacebookCount", function (t) {
-  t.plan(testCount(t, ReactSocial.FacebookCount));
+  t.plan(testCount(t, "FacebookCount"));
+});
+
+test("TwitterCount", function (t) {
+  t.plan(testCount(t, "TwitterCount"));
 });
 
 test("GooglePlusCount", function (t) {
-  t.plan(testCount(t, ReactSocial.GooglePlusCount));
+  t.plan(testCount(t, "GooglePlusCount"));
 });
 
 test("PinterestCount", function (t) {
-  t.plan(testCount(t, ReactSocial.PinterestCount));
+  t.plan(testCount(t, "PinterestCount"));
 });
 
 test("LinkedInCount", function (t) {
-  t.plan(testCount(t, ReactSocial.LinkedInCount));
+  t.plan(testCount(t, "LinkedInCount"));
 });
 
 test("RedditCount", function (t) {
-  t.plan(testCount(t, ReactSocial.RedditCount));
+  t.plan(testCount(t, "RedditCount"));
 });
 
 test("VKontakteCount", function (t) {
-  t.plan(testCount(t, ReactSocial.VKontakteCount));
+  t.plan(testCount(t, "VKontakteCount"));
 });
 
 test("TumblrCount", function (t) {
-  t.plan(testCount(t, ReactSocial.TumblrCount));
+  t.plan(testCount(t, "TumblrCount"));
+});
+
+test("PocketCount", function (t) {
+  t.plan(testCount(t, "PocketCount"));
 });
 
 // Buttons
 test("FacebookButton", function (t) {
-  t.plan(testButton(t, ReactSocial.FacebookButton));
+  t.plan(testButton(t, "FacebookButton"));
 });
 
 test("TwitterButton", function (t) {
-  t.plan(testButton(t, ReactSocial.TwitterButton));
+  t.plan(testButton(t, "TwitterButton"));
 });
 
 test("GooglePlusButton", function (t) {
-  t.plan(testButton(t, ReactSocial.GooglePlusButton));
+  t.plan(testButton(t, "GooglePlusButton"));
 });
 
 test("PinterestButton", function (t) {
-  t.plan(testButton(t, ReactSocial.PinterestButton));
+  t.plan(testButton(t, "PinterestButton"));
 });
 
 test("LinkedInButton", function (t) {
-  t.plan(testButton(t, ReactSocial.LinkedInButton));
+  t.plan(testButton(t, "LinkedInButton"));
 });
 
 test("RedditButton", function (t) {
-  t.plan(testButton(t, ReactSocial.RedditButton));
+  t.plan(testButton(t, "RedditButton"));
 });
 
 test("VKontakteButton", function (t) {
-  t.plan(testButton(t, ReactSocial.VKontakteButton));
+  t.plan(testButton(t, "VKontakteButton"));
 });
 
 test("EmailButton", function (t) {
-  t.plan(testButton(t, ReactSocial.EmailButton, "_self"));
+  t.plan(testButton(t, "EmailButton", "_self"));
 });
 
 test("XingButton", function (t) {
-  t.plan(testButton(t, ReactSocial.XingButton));
+  t.plan(testButton(t, "XingButton"));
 });
 
 test("TumblrButton", function (t) {
-  t.plan(testButton(t, ReactSocial.TumblrButton));
+  t.plan(testButton(t, "TumblrButton"));
+});
+
+test("PocketButton", function (t) {
+  t.plan(testButton(t, "TumblrButton"));
 });
