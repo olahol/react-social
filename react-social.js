@@ -186,7 +186,10 @@
     displayName: "Button"
 
     , propTypes: {
-      element: React.PropTypes.string
+      element: React.PropTypes.oneOfType([
+        React.PropTypes.string
+      , React.PropTypes.func
+      ])
       , url: React.PropTypes.string
       , media: React.PropTypes.string
       , message: React.PropTypes.string
