@@ -144,6 +144,7 @@ them yourself.
 * Maxime Mezrahi (@maxs15)
 * Arvin Tehrani (@arvinkx)
 * Dennis Stücken (@dstuecken)
+* Jonas (@jonashaefele)
 
 
 ---

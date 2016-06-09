@@ -1,3 +1,7 @@
+##### 1.4.1 (2016-06-09)
+
+* Allow function as possible value to element prop.
+
 ##### 1.4.0 (2016-05-25)
 
 * Add PocketButton, PocketCount and TwitterCount.

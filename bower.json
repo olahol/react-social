@@ -3,7 +3,7 @@
   "main": [
     "react-social.js"
   ],
-  "version": "1.4.0",
+  "version": "1.4.1",
   "homepage": "https://github.com/olahol/react-social",
   "description": "React social buttons and counts for Facebook, Pinterest, Google etc ...",
   "keywords": [
