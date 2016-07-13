@@ -176,7 +176,7 @@
     , render: function () {
       return React.createElement(
         this.props.element
-        , spread(this.props, ["element", "url"])
+        , spread(this.props, ["element", "url", "onCount"])
         , this.state.count
       );
     }
@@ -225,7 +225,7 @@
     }
 
     , render: function () {
-      var other = spread(this.props, ["onClick", "element", "url"]);
+      var other = spread(this.props, ["onClick", "element", "url", "_open", "message"]);
 
       return React.createElement(
         this.props.element

@@ -1,3 +1,7 @@
+##### 1.4.2 (2016-07-14)
+
+* Fix React warnings.
+
 ##### 1.4.1 (2016-06-09)
 
 * Allow function as possible value to element prop.
