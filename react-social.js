@@ -391,7 +391,7 @@
       appId: React.PropTypes.oneOfType([
         React.PropTypes.string,
         React.PropTypes.number
-      ])
+      ]).isRequired
     }
 
     , constructUrl: function () {

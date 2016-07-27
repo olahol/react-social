@@ -24,7 +24,7 @@ class App extends Component {
     let url = "https://github.com";
 
     return (
-      <FacebookButton url={url}>
+      <FacebookButton url={url} appId={appId}>
         <FacebookCount url={url} />
         {" Share " + url}
       </FacebookButton>
@@ -117,7 +117,7 @@ Url of an image.
 
 ##### appId
 
-- FacebookButton
+- FacebookButton (required)
 
 Facebook app id.
 
