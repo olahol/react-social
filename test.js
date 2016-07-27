@@ -44,7 +44,7 @@ function testButton(t, str, _blank) {
   setTimeout(function () {
     var $el = render(comp, {_open: false, onClick: function (e, url, target) {
       t.equal(target, _blank);
-    }});
+    }, appId: 1});
     $el.click();
     t.equal($el[0].nodeName, "BUTTON");
   });

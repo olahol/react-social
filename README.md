@@ -145,6 +145,7 @@ them yourself.
 * Arvin Tehrani (@arvinkx)
 * Dennis Stücken (@dstuecken)
 * Jonas (@jonashaefele)
+* River Kanies (@riverKanies)
 
 
 ---

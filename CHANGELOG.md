@@ -1,3 +1,8 @@
+##### 1.4.3 (2016-07-27)
+
+* Fix React warnings.
+* Make `appId` required by FacebookButton.
+
 ##### 1.4.2 (2016-07-14)
 
 * Fix React warnings.
