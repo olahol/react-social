@@ -395,6 +395,10 @@
     }
 
     , constructUrl: function () {
+      if (this.props.sharer) {
+        return "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(this.props.url)
+      }
+
       return "https://www.facebook.com/dialog/feed?"
              + "app_id=" + encodeURIComponent(this.props.appId)
              + "&display=popup&caption=" + encodeURIComponent(this.props.message)
