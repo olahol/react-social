@@ -125,7 +125,7 @@ Facebook app id.
 
 - FacebookButton
 
-Facebook has 2 different share dialogs. By default we're showing Feed Dialog which has more options, but supports only sharing to user's feed. You can set `sharer` option to `true` and we'll show Share Dialog where you user can choose between their feed and also pages they has access to.
+Facebook has 2 different share dialogs. By default we're showing Feed Dialog which has more options, but supports only sharing to user's feed. You can set `sharer` option to `true` and we'll show Share Dialog where you user can choose between their feed and also pages they have access to.
 
 ## Styles
 
