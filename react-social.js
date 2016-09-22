@@ -247,16 +247,16 @@
     , mixins: [Count]
 
     , constructUrl: function () {
-      var fql = encodeURIComponent("select like_count, share_count from link_stat where url = '" + this.props.url + "'")
-        , url = "https://api.facebook.com/method/fql.query?format=json&callback=@&query=" + fql;
-
+      var url = "https://graph.facebook.com/?callback=@&id=" + encodeURIComponent(this.props.url);
       return url;
     }
 
     , extractCount: function (data) {
-      if (!data[0]) { return 0; }
+      if (!data || !data.share || !data.share.share_count) {
+        return 0;
+      }
 
-      return data[0].like_count + data[0].share_count;
+      return data.share.share_count;
     }
   });
 

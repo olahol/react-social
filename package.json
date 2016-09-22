@@ -1,6 +1,6 @@
 {
   "name": "react-social",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "React social buttons and counts for Facebook, Pinterest, Google etc ...",
   "main": "react-social.js",
   "peerDependencies": {

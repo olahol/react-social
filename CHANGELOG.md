@@ -1,3 +1,7 @@
+##### 1.6.0 (2016-09-22)
+
+* Fix `FacebookCount` with http://graph.facebook.com.
+
 ##### 1.4.3 (2016-07-27)
 
 * Fix React warnings.
