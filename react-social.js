@@ -194,8 +194,8 @@
       , media: React.PropTypes.string
       , message: React.PropTypes.string
       , onClick: React.PropTypes.func
-      , target: React.PropTypes.string,
-      , windowOptions: React.PropTypes.array,
+      , target: React.PropTypes.string
+      , windowOptions: React.PropTypes.array
       , _open: React.PropTypes.bool
     }
 
