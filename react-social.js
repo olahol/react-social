@@ -194,7 +194,8 @@
       , media: React.PropTypes.string
       , message: React.PropTypes.string
       , onClick: React.PropTypes.func
-      , target: React.PropTypes.string
+      , target: React.PropTypes.string,
+      , windowOptions: React.PropTypes.array,
       , _open: React.PropTypes.bool
     }
 
@@ -218,9 +219,10 @@
     , click: function (e) {
       var url = this.constructUrl();
       var target = this.props.target;
+      var options = this.props.windowOptions.join(',');
       this.props.onClick(e, url, target);
       if (isBrowser() && this.props._open) {
-        window.open(url, target);
+        window.open(url, target, options);
       }
     }
 
