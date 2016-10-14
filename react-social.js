@@ -212,6 +212,7 @@
         , media: ""
         , message: ""
         , onClick: function () { }
+        , windowOptions: []
         , _open: true
       };
     }
