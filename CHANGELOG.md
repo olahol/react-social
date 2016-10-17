@@ -1,3 +1,7 @@
+##### 1.6.1 (2016-10-17)
+
+* Add `windowOptions`.
+
 ##### 1.6.0 (2016-09-22)
 
 * Fix `FacebookCount` with http://graph.facebook.com.

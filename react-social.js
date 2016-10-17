@@ -228,7 +228,7 @@
     }
 
     , render: function () {
-      var other = spread(this.props, ["onClick", "element", "url", "_open", "message", "appId", "media"]);
+      var other = spread(this.props, ["onClick", "element", "url", "_open", "message", "appId", "media", "windowOptions"]);
 
       return React.createElement(
         this.props.element

@@ -98,6 +98,10 @@ The url you want to share, default is `window.location`.
 
 The target you want to open, default is `_blank`.
 
+##### windowOptions
+
+Pass options to `window.open`.
+
 ##### message
 
 - TwitterButton
@@ -153,6 +157,7 @@ them yourself.
 * Jonas (@jonashaefele)
 * River Kanies (@riverKanies)
 * Pavel Linkesch (@orthes)
+* Vincent (@vkammerer)
 
 
 ---
