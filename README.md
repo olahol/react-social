@@ -158,6 +158,7 @@ them yourself.
 * River Kanies (@riverKanies)
 * Pavel Linkesch (@orthes)
 * Vincent (@vkammerer)
+* Ryan Nevius (@rnevius)
 
 
 ---
