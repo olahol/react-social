@@ -197,6 +197,7 @@
       , target: React.PropTypes.string
       , windowOptions: React.PropTypes.array
       , _open: React.PropTypes.bool
+      , sharer: React.PropTypes.bool
     }
 
     , getDefaultProps: function () {
@@ -214,6 +215,7 @@
         , onClick: function () { }
         , windowOptions: []
         , _open: true
+        , sharer: false
       };
     }
 
@@ -228,7 +230,7 @@
     }
 
     , render: function () {
-      var other = spread(this.props, ["onClick", "element", "url", "_open", "message", "appId", "media", "windowOptions"]);
+      var other = spread(this.props, ["onClick", "element", "url", "_open", "message", "appId", "sharer", "media", "windowOptions"]);
 
       return React.createElement(
         this.props.element
@@ -394,7 +396,8 @@
       appId: React.PropTypes.oneOfType([
         React.PropTypes.string,
         React.PropTypes.number
-      ]).isRequired
+      ]).isRequired,
+      sharer: React.PropTypes.bool
     }
 
     , constructUrl: function () {
