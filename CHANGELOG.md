@@ -1,3 +1,7 @@
+##### 1.6.2 (2016-12-06)
+
+* Fix `sharer` warning.
+
 ##### 1.6.1 (2016-10-17)
 
 * Add `windowOptions`.
