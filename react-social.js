@@ -104,6 +104,7 @@
     , propTypes: {
       element: React.PropTypes.string
       , url: React.PropTypes.string
+      , token: React.PropTypes.string
     }
 
     , getDefaultProps: function () {
@@ -115,6 +116,7 @@
 
       return {
         url: location
+        , token: ""
         , element: "span"
         , onCount: function () { }
       };
@@ -176,7 +178,7 @@
     , render: function () {
       return React.createElement(
         this.props.element
-        , spread(this.props, ["element", "url", "onCount"])
+        , spread(this.props, ["element", "url", "onCount", "token"])
         , this.state.count
       );
     }
@@ -252,7 +254,17 @@
     , mixins: [Count]
 
     , constructUrl: function () {
-      var url = "https://graph.facebook.com/?callback=@&id=" + encodeURIComponent(this.props.url);
+      var url = "";
+
+      if(!this.props.token){
+        url = "https://graph.facebook.com/?callback=@&id=" + encodeURIComponent(this.props.url);
+      }
+      else{
+        url = "https://graph.facebook.com/v2.8/?callback=@" 
+                + "&id=" + encodeURIComponent(this.props.url) 
+                + "&access_token=" + encodeURIComponent(this.props.token);
+      }
+
       return url;
     }
 
@@ -402,7 +414,11 @@
 
     , constructUrl: function () {
       if (this.props.sharer) {
-        return "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(this.props.url)
+        return "https://www.facebook.com/dialog/share?"
+             + "app_id=" + encodeURIComponent(this.props.appId)
+             + "&display=popup&caption=" + encodeURIComponent(this.props.message)
+             + "&href=" + encodeURIComponent(this.props.url)
+             + "&redirect_uri=" + encodeURIComponent("https://www.facebook.com/")
       }
 
       return "https://www.facebook.com/dialog/feed?"
