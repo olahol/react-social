@@ -60,9 +60,11 @@ Change the element the component renders into, default is `span`.
 
 The url you want to get the count of, default is `window.location`.
 
-##### token (FacebookCount)
+##### token
 
-Optional facebook access token.
+- FacebookButton
+
+Optional access token.
 
 ##### onCount
 
@@ -120,6 +122,7 @@ A message that's prepended before the url.
 ##### media
 
 - PinterestButton (required)
+- FacebookButton (optional)
 
 Url of an image.
 

@@ -1,3 +1,7 @@
+##### 1.7.1 (2017-01-20)
+
+* Use `media` as `picture` in FacebookButton.
+
 ##### 1.7.0 (2017-01-20)
 
 * Upgrade Facebook interface.
