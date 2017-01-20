@@ -424,6 +424,7 @@
              + "app_id=" + encodeURIComponent(this.props.appId)
              + "&display=popup&caption=" + encodeURIComponent(this.props.message)
              + "&link=" + encodeURIComponent(this.props.url)
+             + "&picture=" + encodeURIComponent(this.props.media)
              + "&redirect_uri=" + encodeURIComponent("https://www.facebook.com/")
     }
   });

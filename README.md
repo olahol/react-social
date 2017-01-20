@@ -168,6 +168,7 @@ them yourself.
 * Vincent (@vkammerer)
 * Alexey Balmasov (@balmasich)
 * Amitom (@Amitom)
+* Ryan Nevius (@rnevius)
 
 
 ---
