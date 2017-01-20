@@ -256,12 +256,11 @@
     , constructUrl: function () {
       var url = "";
 
-      if(!this.props.token){
+      if (!this.props.token) {
         url = "https://graph.facebook.com/?callback=@&id=" + encodeURIComponent(this.props.url);
-      }
-      else{
-        url = "https://graph.facebook.com/v2.8/?callback=@" 
-                + "&id=" + encodeURIComponent(this.props.url) 
+      } else {
+        url = "https://graph.facebook.com/v2.8/?callback=@"
+                + "&id=" + encodeURIComponent(this.props.url)
                 + "&access_token=" + encodeURIComponent(this.props.token);
       }
 

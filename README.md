@@ -60,6 +60,10 @@ Change the element the component renders into, default is `span`.
 
 The url you want to get the count of, default is `window.location`.
 
+##### token (FacebookCount)
+
+Optional facebook access token.
+
 ##### onCount
 
 Callback for when the count is updated. Callback takes one argument `count`.
@@ -129,7 +133,11 @@ Facebook app id.
 
 - FacebookButton
 
-Facebook has 2 different share dialogs. By default we're showing Feed Dialog which has more options, but supports only sharing to user's feed. You can set `sharer` option to `true` and we'll show Share Dialog where user can choose between their feed and also pages they have access to.
+Facebook has 2 different share dialogs. By default we're showing Feed
+Dialog which has more options, but supports only sharing to user's
+feed. You can set `sharer` option to `true` and we'll show Share Dialog
+where user can choose between their feed and also pages they have
+access to.
 
 ## Styles
 
@@ -159,6 +167,7 @@ them yourself.
 * Pavel Linkesch (@orthes)
 * Vincent (@vkammerer)
 * Alexey Balmasov (@balmasich)
+* Amitom (@Amitom)
 
 
 ---

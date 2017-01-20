@@ -1,3 +1,7 @@
+##### 1.7.0 (2017-01-20)
+
+* Upgrade Facebook interface.
+
 ##### 1.6.2 (2016-12-06)
 
 * Fix `sharer` warning.
