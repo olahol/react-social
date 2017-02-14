@@ -444,11 +444,7 @@
   exports.EmailButton = React.createClass({
     displayName: "EmailButton"
 
-    , mixins: [Button]
-
-    , getDefaultProps: function () {
-      return {target: "_self"};
-    }
+    , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
       return "mailto:?subject=" + encodeURIComponent(this.props.message) + "&body=" + encodeURIComponent(this.props.url);
