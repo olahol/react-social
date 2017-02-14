@@ -119,7 +119,7 @@ test("VKontakteButton", function (t) {
 });
 
 test("EmailButton", function (t) {
-  t.plan(testButton(t, "EmailButton", "_self"));
+  t.plan(testButton(t, "EmailButton"));
 });
 
 test("XingButton", function (t) {
