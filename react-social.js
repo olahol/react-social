@@ -481,7 +481,7 @@
     , constructUrl: function () {
         return "http://vk.com/share.php?url=" 
                 + encodeURIComponent(this.props.url) + "&title="
-                + encodeURIComponent(this.props.title) + "&message="
+                + encodeURIComponent(this.props.title) + "&description="
                 + encodeURIComponent(this.props.message);
     }
   });
