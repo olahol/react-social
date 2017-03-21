@@ -479,7 +479,10 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
-        return "http://vk.com/share.php?url=" + encodeURIComponent(this.props.url);
+        return "http://vk.com/share.php?url=" 
+                + encodeURIComponent(this.props.url) + "&title="
+                + encodeURIComponent(this.props.title) + "&message=
+                + encodeURIComponent(this.props.message);
     }
   });
 
