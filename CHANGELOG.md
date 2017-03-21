@@ -1,3 +1,8 @@
+##### 1.8.0 (2017-03-21)
+
+* Add default traget blank to EmailButton.
+* Add `title` and `message` parameter to VK button.
+
 ##### 1.7.1 (2017-01-20)
 
 * Use `media` as `picture` in FacebookButton.

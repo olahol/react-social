@@ -115,9 +115,16 @@ Pass options to `window.open`.
 - XingButton
 - TumblrButton
 - PocketButton
+- VKButton
 - PinterestButton (required)
 
 A message that's prepended before the url.
+
+##### title
+
+- VKButton
+
+Title of your shared content.
 
 ##### media
 
@@ -172,6 +179,8 @@ them yourself.
 * Alexey Balmasov (@balmasich)
 * Amitom (@Amitom)
 * Ryan Nevius (@rnevius)
+* David Lakata (@dlakata)
+* Roman Kosovichev (@roma-so)
 
 
 ---
