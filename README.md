@@ -123,6 +123,8 @@ A message that's prepended before the url.
 ##### title
 
 - VKButton
+- RedditButton
+- LinkedInButton
 
 Title of your shared content.
 

@@ -475,7 +475,7 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
-        return "http://vk.com/share.php?url=" 
+        return "http://vk.com/share.php?url="
                 + encodeURIComponent(this.props.url) + "&title="
                 + encodeURIComponent(this.props.title) + "&description="
                 + encodeURIComponent(this.props.message);
@@ -498,7 +498,9 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
-        return "https://www.reddit.com/submit?url=" + encodeURIComponent(this.props.url);
+        return "https://www.reddit.com/submit?url="
+        + encodeURIComponent(this.props.url) + '&title='
+        + encodeURIComponent(this.props.title);
     }
   });
 
@@ -508,7 +510,9 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , constructUrl: function () {
-      return "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(this.props.url);
+      return "https://www.linkedin.com/shareArticle?url="
+        + encodeURIComponent(this.props.url) + '&title='
+        + encodeURIComponent(this.props.title);
     }
   });
 
