@@ -470,6 +470,31 @@
     }
   });
 
+  exports.MyMailRuButton = React.createClass({
+    displayName: "MyMailRuButton"
+
+    , mixins: [Button, DefaultBlankTarget]
+
+    , propTypes: {
+      description: React.PropTypes.string.isRequired,
+      imageUrl: React.PropTypes.string.isRequired,
+      title: React.PropTypes.string.isRequired
+    }
+
+    , constructUrl: function () {
+      var share_location = 'http://connect.mail.ru/share',
+          url = this.props.url,
+          image_url = encodeURIComponent(this.props.imageUrl),
+          title = encodeURIComponent(this.props.title),
+          description = encodeURIComponent(this.props.description);
+      var search_keys = { url: url, image_url: image_url, title: title, description: description };
+      var search = Object.keys(search_keys).map(function (search_key) {
+        return search_key + '=' + search_keys[search_key];
+      }).join('&');
+      return [share_location, search].join('?');
+    }
+  });
+
   exports.TwitterButton = React.createClass({
     displayName: "TwitterButton"
 

@@ -98,6 +98,10 @@ test("OdnoklassnikiButton", function (t) {
   t.plan(testButton(t, "OdnoklassnikiButton"));
 });
 
+test("MyMailRuButton", function (t) {
+  t.plan(testButton(t, "MyMailRuButton"));
+});
+
 test("TwitterButton", function (t) {
   t.plan(testButton(t, "TwitterButton"));
 });
