@@ -235,7 +235,20 @@
     }
 
     , render: function () {
-      var other = spread(this.props, ["onClick", "element", "url", "_open", "message", "appId", "sharer", "media", "windowOptions"]);
+      var other = spread(this.props, [
+        "_open",
+        "appId",
+        "description",
+        "element",
+        "imageUrl",
+        "media",
+        "message",
+        "onClick",
+        "sharer",
+        "title",
+        "url",
+        "windowOptions"
+      ]);
 
       return React.createElement(
         this.props.element
@@ -436,6 +449,12 @@
     displayName: "OdnoklassnikiButton"
 
     , mixins: [Button, DefaultBlankTarget]
+
+    , propTypes: {
+      description: React.PropTypes.string.isRequired,
+      imageUrl: React.PropTypes.string.isRequired,
+      title: React.PropTypes.string.isRequired
+    }
 
     , constructUrl: function () {
       var share_location = 'https://connect.ok.ru/offer',
