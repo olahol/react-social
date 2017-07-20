@@ -429,6 +429,26 @@
     }
   });
 
+  exports.OdnoklassnikiButton = React.createClass({
+    displayName: "OdnoklassnikiButton"
+
+    , mixins: [Button, DefaultBlankTarget]
+
+    , constructUrl: function () {
+      var share_location = 'https://connect.ok.ru/offer',
+          url = this.props.url,
+          imageUrl = encodeURIComponent(this.props.imageUrl),
+          title = encodeURIComponent(this.props.title),
+          description = encodeURIComponent(this.props.description);
+
+      var search_keys = { url: url, imageUrl: imageUrl, title: title, description: description };
+      var search = Object.keys(search_keys).map(function (search_key) {
+        return search_key + '=' + search_keys[search_key];
+      }).join('&');
+      return [share_location, search].join('?');
+    }
+  });
+
   exports.TwitterButton = React.createClass({
     displayName: "TwitterButton"
 

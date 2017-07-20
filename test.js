@@ -94,6 +94,10 @@ test("FacebookButton", function (t) {
   t.plan(testButton(t, "FacebookButton"));
 });
 
+test("OdnoklassnikiButton", function (t) {
+  t.plan(testButton(t, "OdnoklassnikiButton"));
+});
+
 test("TwitterButton", function (t) {
   t.plan(testButton(t, "TwitterButton"));
 });
