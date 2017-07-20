@@ -192,14 +192,17 @@
         React.PropTypes.string
       , React.PropTypes.func
       ])
-      , url: React.PropTypes.string
+      , description: React.PropTypes.string,
+      , imageUrl: React.PropTypes.string
       , media: React.PropTypes.string
       , message: React.PropTypes.string
       , onClick: React.PropTypes.func
+      , sharer: React.PropTypes.bool
       , target: React.PropTypes.string
+      , title: React.PropTypes.string
+      , url: React.PropTypes.string
       , windowOptions: React.PropTypes.array
       , _open: React.PropTypes.bool
-      , sharer: React.PropTypes.bool
     }
 
     , getDefaultProps: function () {
@@ -440,10 +443,6 @@
           imageUrl = encodeURIComponent(this.props.imageUrl),
           title = encodeURIComponent(this.props.title),
           description = encodeURIComponent(this.props.description);
-      // delete props which not need in share-button:
-      delete this.props.imageUrl;
-      delete this.props.description;
-      delete this.props.title;
       var search_keys = { url: url, imageUrl: imageUrl, title: title, description: description };
       var search = Object.keys(search_keys).map(function (search_key) {
         return search_key + '=' + search_keys[search_key];
