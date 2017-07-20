@@ -440,7 +440,10 @@
           imageUrl = encodeURIComponent(this.props.imageUrl),
           title = encodeURIComponent(this.props.title),
           description = encodeURIComponent(this.props.description);
-
+      // delete props which not need in share-button:
+      delete this.props.imageUrl;
+      delete this.props.description;
+      delete this.props.title;
       var search_keys = { url: url, imageUrl: imageUrl, title: title, description: description };
       var search = Object.keys(search_keys).map(function (search_key) {
         return search_key + '=' + search_keys[search_key];
