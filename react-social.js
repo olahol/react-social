@@ -192,7 +192,7 @@
         React.PropTypes.string
       , React.PropTypes.func
       ])
-      , description: React.PropTypes.string,
+      , description: React.PropTypes.string
       , imageUrl: React.PropTypes.string
       , media: React.PropTypes.string
       , message: React.PropTypes.string
