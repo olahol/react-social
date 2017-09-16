@@ -2,7 +2,7 @@
   if (typeof module !== "undefined" && module.exports) {
     module.exports = factory(require("react"), require("create-react-class"), require("prop-types"));
   } else if (typeof define === "function" && define.amd) {
-    define(["react"], factory);
+    define(["react", "create-react-class", "prop-types"], factory);
   } else {
     root.ReactSocial = factory(root.React, root.React.createClass, root.React.PropTypes);
   }

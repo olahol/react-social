@@ -3,7 +3,7 @@
   "main": [
     "react-social.js"
   ],
-  "version": "1.10.0",
+  "version": "1.10.1",
   "homepage": "https://github.com/olahol/react-social",
   "description": "React social buttons and counts for Facebook, Pinterest, Google etc ...",
   "keywords": [
@@ -33,6 +33,8 @@
     "example"
   ],
   "dependencies": {
-    "react": ">=0.13.0"
+    "react": ">=0.13.0",
+    "create-react-class": "^15.6.0",
+    "prop-types": "^15.5.10"
   }
 }
