@@ -89,6 +89,8 @@ Return the social count.
 -  XingButton
 -  TumblrButton
 -  PocketButton
+-  OdnoklassnikiButton
+-  MyMailRuButton
 
 ### Props
 
@@ -117,6 +119,8 @@ Pass options to `window.open`.
 - PocketButton
 - VKButton
 - PinterestButton (required)
+- OdnoklassnikiButton (required)
+- MyMailRuButton (required)
 
 A message that's prepended before the url.
 
@@ -125,6 +129,8 @@ A message that's prepended before the url.
 - VKButton
 - RedditButton
 - LinkedInButton
+- OdnoklassnikiButton (required)
+- MyMailRuButton (required)
 
 Title of your shared content.
 
@@ -132,6 +138,8 @@ Title of your shared content.
 
 - PinterestButton (required)
 - FacebookButton (optional)
+- OdnoklassnikiButton (required)
+- MyMailRuButton (required)
 
 Url of an image.
 
@@ -184,6 +192,7 @@ them yourself.
 * David Lakata (@dlakata)
 * Roman Kosovichev (@roma-so)
 * Igor Pnev (@exdeniz)
+* Belevskij Sergeij (@r72cccp)
 
 
 ---

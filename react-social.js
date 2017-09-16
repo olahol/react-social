@@ -192,8 +192,6 @@
         React.PropTypes.string
       , React.PropTypes.func
       ])
-      , description: React.PropTypes.string
-      , imageUrl: React.PropTypes.string
       , media: React.PropTypes.string
       , message: React.PropTypes.string
       , onClick: React.PropTypes.func
@@ -238,9 +236,7 @@
       var other = spread(this.props, [
         "_open",
         "appId",
-        "description",
         "element",
-        "imageUrl",
         "media",
         "message",
         "onClick",
@@ -451,18 +447,18 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      description: React.PropTypes.string.isRequired,
-      imageUrl: React.PropTypes.string.isRequired,
+      message: React.PropTypes.string.isRequired,
+      media: React.PropTypes.string.isRequired,
       title: React.PropTypes.string.isRequired
     }
 
     , constructUrl: function () {
       var share_location = 'https://connect.ok.ru/offer',
           url = this.props.url,
-          imageUrl = encodeURIComponent(this.props.imageUrl),
+          media = encodeURIComponent(this.props.media),
           title = encodeURIComponent(this.props.title),
-          description = encodeURIComponent(this.props.description);
-      var search_keys = { url: url, imageUrl: imageUrl, title: title, description: description };
+          message = encodeURIComponent(this.props.message);
+      var search_keys = { url: url, media: media, title: title, description: message };
       var search = Object.keys(search_keys).map(function (search_key) {
         return search_key + '=' + search_keys[search_key];
       }).join('&');
@@ -476,18 +472,18 @@
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      description: React.PropTypes.string.isRequired,
-      imageUrl: React.PropTypes.string.isRequired,
+      message: React.PropTypes.string.isRequired,
+      media: React.PropTypes.string.isRequired,
       title: React.PropTypes.string.isRequired
     }
 
     , constructUrl: function () {
       var share_location = 'http://connect.mail.ru/share',
           url = this.props.url,
-          image_url = encodeURIComponent(this.props.imageUrl),
+          media = encodeURIComponent(this.props.media),
           title = encodeURIComponent(this.props.title),
-          description = encodeURIComponent(this.props.description);
-      var search_keys = { url: url, image_url: image_url, title: title, description: description };
+          message = encodeURIComponent(this.props.message);
+      var search_keys = { url: url, image_url: media, title: title, description: message };
       var search = Object.keys(search_keys).map(function (search_key) {
         return search_key + '=' + search_keys[search_key];
       }).join('&');
