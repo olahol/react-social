@@ -1,3 +1,8 @@
+##### 1.10.0 (2017-09-16)
+
+* Add `OdnoklassnikiButton` an `MyMailRuButton`.
+* Fix deprecation warnings.
+
 ##### 1.9.0 (2017-04-09)
 
 * Add `title` to `RedditButton` and `LinkedInButton`.
