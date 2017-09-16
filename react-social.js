@@ -1,12 +1,12 @@
 ;(function (root, factory) {
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = factory(require("react"));
+    module.exports = factory(require("react"), require("create-react-class"), require("prop-types"));
   } else if (typeof define === "function" && define.amd) {
     define(["react"], factory);
   } else {
-    root.ReactSocial = factory(root.React);
+    root.ReactSocial = factory(root.React, root.React.createClass, root.React.PropTypes);
   }
-})(this, function (React) {
+})(this, function (React, createClass, PropTypes) {
   "use strict";
 
   var isBrowser = function () {
@@ -102,9 +102,9 @@
     displayName: "Count"
 
     , propTypes: {
-      element: React.PropTypes.string
-      , url: React.PropTypes.string
-      , token: React.PropTypes.string
+      element: PropTypes.string
+      , url: PropTypes.string
+      , token: PropTypes.string
     }
 
     , getDefaultProps: function () {
@@ -188,19 +188,19 @@
     displayName: "Button"
 
     , propTypes: {
-      element: React.PropTypes.oneOfType([
-        React.PropTypes.string
-      , React.PropTypes.func
+      element: PropTypes.oneOfType([
+        PropTypes.string
+      , PropTypes.func
       ])
-      , media: React.PropTypes.string
-      , message: React.PropTypes.string
-      , onClick: React.PropTypes.func
-      , sharer: React.PropTypes.bool
-      , target: React.PropTypes.string
-      , title: React.PropTypes.string
-      , url: React.PropTypes.string
-      , windowOptions: React.PropTypes.array
-      , _open: React.PropTypes.bool
+      , media: PropTypes.string
+      , message: PropTypes.string
+      , onClick: PropTypes.func
+      , sharer: PropTypes.bool
+      , target: PropTypes.string
+      , title: PropTypes.string
+      , url: PropTypes.string
+      , windowOptions: PropTypes.array
+      , _open: PropTypes.bool
     }
 
     , getDefaultProps: function () {
@@ -260,7 +260,7 @@
   };
 
   /* Counts */
-  exports.FacebookCount = React.createClass({
+  exports.FacebookCount = createClass({
     displayName: "FacebookCount"
 
     , mixins: [Count]
@@ -288,7 +288,7 @@
     }
   });
 
-  exports.TwitterCount = React.createClass({
+  exports.TwitterCount = createClass({
     displayName: "TwitterCount"
 
     , mixins: [Count]
@@ -302,7 +302,7 @@
     }
   });
 
-  exports.GooglePlusCount = React.createClass({
+  exports.GooglePlusCount = createClass({
     displayName: "GooglePlusCount"
 
     , mixins: [Count]
@@ -316,7 +316,7 @@
     }
   });
 
-  exports.PinterestCount = React.createClass({
+  exports.PinterestCount = createClass({
     displayName: "PinterestCount"
 
     , mixins: [Count]
@@ -331,7 +331,7 @@
     }
   });
 
-  exports.LinkedInCount = React.createClass({
+  exports.LinkedInCount = createClass({
     displayName: "LinkedInCount"
 
     , mixins: [Count]
@@ -345,7 +345,7 @@
     }
   });
 
-  exports.RedditCount = React.createClass({
+  exports.RedditCount = createClass({
     displayName: "RedditCount"
 
     , mixins: [Count]
@@ -366,7 +366,7 @@
     }
   });
 
-  exports.VKontakteCount = React.createClass({
+  exports.VKontakteCount = createClass({
     displayName: "VKontakteCount"
 
     , mixins: [Count]
@@ -380,7 +380,7 @@
   });
 
 
-  exports.TumblrCount = React.createClass({
+  exports.TumblrCount = createClass({
     displayName: "TumblrCount"
 
     , mixins: [Count]
@@ -395,7 +395,7 @@
     }
   });
 
-  exports.PocketCount = React.createClass({
+  exports.PocketCount = createClass({
     displayName: "PocketCount"
 
     , mixins: [Count]
@@ -410,17 +410,17 @@
   });
 
   /* Buttons */
-  exports.FacebookButton = React.createClass({
+  exports.FacebookButton = createClass({
     displayName: "FacebookButton"
 
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      appId: React.PropTypes.oneOfType([
-        React.PropTypes.string,
-        React.PropTypes.number
+      appId: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
       ]).isRequired,
-      sharer: React.PropTypes.bool
+      sharer: PropTypes.bool
     }
 
     , constructUrl: function () {
@@ -441,15 +441,15 @@
     }
   });
 
-  exports.OdnoklassnikiButton = React.createClass({
+  exports.OdnoklassnikiButton = createClass({
     displayName: "OdnoklassnikiButton"
 
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      message: React.PropTypes.string.isRequired,
-      media: React.PropTypes.string.isRequired,
-      title: React.PropTypes.string.isRequired
+      message: PropTypes.string.isRequired,
+      media: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired
     }
 
     , constructUrl: function () {
@@ -466,15 +466,15 @@
     }
   });
 
-  exports.MyMailRuButton = React.createClass({
+  exports.MyMailRuButton = createClass({
     displayName: "MyMailRuButton"
 
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      message: React.PropTypes.string.isRequired,
-      media: React.PropTypes.string.isRequired,
-      title: React.PropTypes.string.isRequired
+      message: PropTypes.string.isRequired,
+      media: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired
     }
 
     , constructUrl: function () {
@@ -491,7 +491,7 @@
     }
   });
 
-  exports.TwitterButton = React.createClass({
+  exports.TwitterButton = createClass({
     displayName: "TwitterButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -503,7 +503,7 @@
     }
   });
 
-  exports.EmailButton = React.createClass({
+  exports.EmailButton = createClass({
     displayName: "EmailButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -513,13 +513,13 @@
     }
   });
 
-  exports.PinterestButton = React.createClass({
+  exports.PinterestButton = createClass({
     displayName: "PinterestButton"
 
     , mixins: [Button, DefaultBlankTarget]
 
     , propTypes: {
-      media: React.PropTypes.string.isRequired
+      media: PropTypes.string.isRequired
     }
 
     , constructUrl: function () {
@@ -531,7 +531,7 @@
     }
   });
 
-  exports.VKontakteButton = React.createClass({
+  exports.VKontakteButton = createClass({
     displayName: "VKontakteButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -544,7 +544,7 @@
     }
   });
 
-  exports.GooglePlusButton = React.createClass({
+  exports.GooglePlusButton = createClass({
     displayName: "GooglePlusButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -554,7 +554,7 @@
     }
   });
 
-  exports.RedditButton = React.createClass({
+  exports.RedditButton = createClass({
     displayName: "RedditButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -566,7 +566,7 @@
     }
   });
 
-  exports.LinkedInButton = React.createClass({
+  exports.LinkedInButton = createClass({
     displayName: "LinkedInButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -578,7 +578,7 @@
     }
   });
 
-  exports.XingButton = React.createClass({
+  exports.XingButton = createClass({
     displayName: "XingButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -588,7 +588,7 @@
     }
   });
 
-  exports.TumblrButton = React.createClass({
+  exports.TumblrButton = createClass({
     displayName: "TumblrButton"
 
     , mixins: [Button, DefaultBlankTarget]
@@ -598,7 +598,7 @@
     }
   });
 
-  exports.PocketButton = React.createClass({
+  exports.PocketButton = createClass({
     displayName: "PocketButton"
 
     , mixins: [Button, DefaultBlankTarget]
